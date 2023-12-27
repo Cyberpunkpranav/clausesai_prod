@@ -1,0 +1,45 @@
+.knowaboutussection{
+    width:90%;
+}
+
+.heading{
+    left:50%;
+    top:3%;
+    transform: translateX(-50%);
+}
+@media screen and (max-width:442px) {
+    .heading{
+        left:50%;
+        top:10%;
+        font-size: 1.2rem;
+        margin-bottom:2rem;
+        width:100%;
+        text-align: center;
+        transform: translateX(-50%);
+    }
+}
+@media screen and (min-width:576px) {
+    .knowaboutussection{
+        width: 90%;
+    } 
+    .heading{
+        left:50%;
+        top:3%;
+        transform: translateX(-50%);
+    }
+}
+@media screen and (min-width:992px) {
+    .knowaboutussection{
+        width: 85%;
+    }
+}
+@media screen and (min-width:1400px) {
+    .heading{
+        left:50%;
+        top:4%;
+        transform: translateX(-50%);
+    }
+    .knowaboutussection{
+        width: 80%;
+    }
+}

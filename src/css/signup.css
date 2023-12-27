@@ -1,0 +1,29 @@
+.signupsection{
+    margin-top:7rem;
+    width:90%;
+}
+@media screen and (min-width:576px) {
+    .signupsection{
+        margin-top:7rem;
+        width:75%;
+    }
+}
+@media screen and (min-width:768px) {
+    .signupsection{
+        margin-top:7rem;
+        width:60%;
+    }
+}
+@media screen and (min-width:992px) {
+    .signupsection{
+        margin-top:7rem;
+        width:45%;
+    }  
+}
+@media screen and (min-width:1400px) {
+    .signupsection{
+        margin-top:7rem;
+        width:40%;
+    }
+}
+

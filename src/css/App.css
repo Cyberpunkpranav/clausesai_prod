@@ -1,0 +1,94 @@
+.searchsection{
+  height: 80vh;
+}
+.searchsection main{
+  margin-bottom:10rem;
+}
+.searchsection .caption{
+  margin-bottom:2rem;
+}
+.search{
+  width:90%;
+}
+/* .searchsection .all_clauses{
+  margin-top:3rem;
+} */
+
+/* .searchsection .all_clauses{
+  width:fit-content;
+  display: block;  
+} */
+.search::placeholder{
+  font-style: italic;
+}
+.caption h1{
+  font-size: 2rem;
+  line-height: 2rem;
+  display:block;
+  text-align: center;
+  letter-spacing: 0px;
+}
+.searchsuggestion{
+  margin-top:2.5rem;
+  width:90%;
+}
+@media screen and (min-width:576px) {
+  .caption{
+    margin-top: 10vh;
+
+  }
+  .caption h1{
+    font-size: 2rem;
+    display:inline;
+    letter-spacing: -3px;
+  }
+}
+@media screen and (min-width:992px) {
+  .searchsection{
+    width:85%;
+  }
+  .searchsuggestion{
+    margin-top: 3.7rem;
+    width:70%;
+  }
+    .search{
+      width:70%
+    }
+}
+@media screen and (min-width:1200px) {
+  .searchsection{
+    width:85%;
+  }
+  .caption h1{
+    font-size: 3rem;
+    display:inline;
+    letter-spacing: -3px;
+  }
+  .search{
+    width: 60%;
+  }
+  .searchsuggestion{
+    max-height:20rem;
+    margin-top:4rem;
+    width:60%;
+  }
+}
+
+@media screen and (min-width:1400px) {
+  .searchsection{
+    width:80%;
+  }
+  .caption h1{
+    font-size: 3.5rem;
+    display:inline;
+    letter-spacing: -4px;
+  }
+  .search{
+    width: 65%;
+  }
+  .searchsuggestion{
+    max-height:20rem;
+    margin-top:4rem;
+    width:65%;
+  }
+}
