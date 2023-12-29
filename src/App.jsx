@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 import { Non_user_Access } from './api/getapis';
 import './css/App.css'
 import './css/navbar.css'
+import toast from 'react-hot-toast';
 const Search = lazy(()=>import('./components/search'))
 const NotFound  = lazy(()=>import('./not_found'))
 const Clauses = lazy(()=>import('./components/clauses/clauses'))
@@ -13,6 +14,25 @@ const Selected_clause = lazy(()=>import('./components/clauses/selected_clause'))
 const Know_about_us = lazy(()=>import('./components/know_about_us'))
 
 const App =  ()=>{
+
+  useEffect(() => {
+    const handleCopyPaste = (event) => {
+      event.preventDefault();
+      toast("Copying and pasting the content is prohibited",{
+        icon:'🚫',
+      })
+    };
+
+    document.addEventListener('copy', handleCopyPaste);
+    document.addEventListener('cut', handleCopyPaste);
+    document.addEventListener('paste', handleCopyPaste);
+
+    return () => {
+      document.removeEventListener('copy', handleCopyPaste);
+      document.removeEventListener('cut', handleCopyPaste);
+      document.removeEventListener('paste', handleCopyPaste);
+    };
+  }, []);
   const access_token = Cookies.get('accessToken')
   const non_user_token = async()=>{
     const data = await Non_user_Access()
