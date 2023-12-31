@@ -68,6 +68,36 @@ const Selected_clause = () => {
       Fetch_Clause()
     },[])
 
+    const words_extraction = (word)=>{
+      word = word.replaceAll(" ","-")
+      word = word.replaceAll("(",'-')
+      word = word.replaceAll(")",'-')
+      word = word.replaceAll("|",'-')
+      word = word.replaceAll("-",'-')
+      word = word.replaceAll("_",'-')
+      word = word.replaceAll("&",'-')
+      word = word.replaceAll("%",'-')
+      word = word.replaceAll("#",'-')
+      word = word.replaceAll("@",'-')
+      word = word.replaceAll("!",'-')
+      word = word.replaceAll("{",'-')
+      word = word.replaceAll("}",'-')
+      word = word.replaceAll("[",'-')
+      word = word.replaceAll("]",'-')
+      word = word.replaceAll("?",'-')
+      word = word.replaceAll(".",'-')
+      word = word.replaceAll(",",'-')
+      word = word.replaceAll("+",'-')
+      word = word.replaceAll(":",'-')
+      word = word.replaceAll(";",'-')
+      word = word.replaceAll("=",'-')
+      word = word.replaceAll('"','-')
+      word = word.replaceAll("'",'-') 
+      word = word.replaceAll(">",'-') 
+      word = word.replaceAll("<",'-') 
+      word = word.replaceAll("-",'')
+      return word
+    }
 
   return (
     <>
@@ -155,30 +185,30 @@ const Selected_clause = () => {
                 {
                   DATA.simple  ? (
                     <li className="nav-item" role="presentation">
-                    <p className="cursor-pointer active mb-0 rounded-0" id={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-simple-tab`} data-bs-toggle="pill" data-bs-target={`#pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-simple`} role="tab" aria-controls={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-simple`} aria-selected="true">Simple</p>
+                    <p className="cursor-pointer active mb-0 rounded-0" id={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-simple-tab`} data-bs-toggle="pill" data-bs-target={`#pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-simple`} role="tab" aria-controls={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-simple`} aria-selected="true">Simple</p>
                   </li>
                   ):(<></>)
                 }
                 {
                   DATA.moderate ? (
                     <li className="nav-item" role="presentation">
-                    <p className="cursor-pointer text-gray2 mb-0 ms-5 ms-md-5 ms-lg-5 mxs-xl-5 ms-xxl-6 rounded-0" id={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-moderate-tab`} data-bs-toggle="pill" data-bs-target={`#pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-moderate`} role="tab" aria-controls={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-moderate`} aria-selected="false">Moderate</p>
+                    <p className="cursor-pointer text-gray2 mb-0 ms-5 ms-md-5 ms-lg-5 mxs-xl-5 ms-xxl-6 rounded-0" id={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-moderate-tab`} data-bs-toggle="pill" data-bs-target={`#pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-moderate`} role="tab" aria-controls={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-moderate`} aria-selected="false">Moderate</p>
                   </li>
                   ):(<></>)
                 }
                 {
                   DATA.complex ? (
                   <li className="nav-item" role="presentation">
-                  <p className="cursor-pointer mb-0 text-gray2 ms-5 ms-md-5 ms-lg-5 mxs-xl-5 ms-xxl-6 rounded-0" id={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-complex-tab`} data-bs-toggle="pill" data-bs-target={`#pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-complex`} role="tab" aria-controls={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-complex`} aria-selected="false">Complex</p>
+                  <p className="cursor-pointer mb-0 text-gray2 ms-5 ms-md-5 ms-lg-5 mxs-xl-5 ms-xxl-6 rounded-0" id={`pills-complex-tab`} data-bs-toggle="pill" data-bs-target={`#pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-complex`} role="tab" aria-controls={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-complex`} aria-selected="false">Complex</p>
                   </li>
                   ):(<></>)
                 }
                 
               </ul>
                 <div className="tab-content border-1 border-start-0 border-end-0 border-bottom-0 border-blue1 bg-white py-4 ps-3" id="pills-tabContent">
-                <div className="tab-pane fade show active" id={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-simple`} role="tabpanel" aria-labelledby={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-simple-tab`} tabIndex="0" dangerouslySetInnerHTML={{__html:DATA!=undefined?DATA.simple:''}}></div>
-                <div className="tab-pane fade" id={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-moderate`} role="tabpanel" aria-labelledby={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-moderate-tab`} tabIndex="0" dangerouslySetInnerHTML={{__html:DATA!=undefined?DATA.moderate:''}}></div>
-                <div className="tab-pane fade" id={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-complex`}role="tabpanel" aria-labelledby={`pills-${DATA.nature?DATA.nature.replace(" ",'-'):`clausetype${DATA.id}`}-complex-tab`} tabIndex="0" dangerouslySetInnerHTML={{__html:DATA!=undefined?DATA.complex:''}}></div>
+                <div className="tab-pane fade show active" id={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-simple`} role="tabpanel" aria-labelledby={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-simple-tab`} tabIndex="0" dangerouslySetInnerHTML={{__html:DATA!=undefined?DATA.simple:''}}></div>
+                <div className="tab-pane fade" id={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-moderate`} role="tabpanel" aria-labelledby={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-moderate-tab`} tabIndex="0" dangerouslySetInnerHTML={{__html:DATA!=undefined?DATA.moderate:''}}></div>
+                <div className="tab-pane fade" id={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-complex`}role="tabpanel" aria-labelledby={`pills-${DATA.nature?words_extraction(DATA.nature):`clausetype${DATA.id}`}-complex-tab`} tabIndex="0" dangerouslySetInnerHTML={{__html:DATA!=undefined?DATA.complex:''}}></div>
               </div>
               </div>
                 ))

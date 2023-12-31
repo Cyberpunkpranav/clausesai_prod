@@ -48,8 +48,8 @@ import toast from 'react-hot-toast'
             <h1 className='text-gray2 text-center'>APPLY</h1>
             </div>
             <main className="row p-0 m-0 justify-content-center position-relative">
-              <div className="col-12 d-flex justify-content-center">
-              <div className="position-relative text-center col-12 col-sm-7 col-md-5 col-lg-6 col-xl-8 col-xxl-7 p-0 m-0 mt-xxl-5" >
+              <div className="col-12 p-0 m-0 d-flex justify-content-center">
+              <div className="position-relative text-center col-11 col-sm-7 col-md-5 col-lg-6 col-xl-8 col-xxl-7 p-0 m-0 mt-xxl-5" >
               <input type="text" autoFocus={true} className='border-blue1 bg-white ps-2 py-2 search bg-gray4 w-100 ' onChange={(e)=>setsearch(e.target.value)} placeholder='Type here to read your relavant clause....' />
               <div className='cursor d-flex'>{search}<div className="cursor_line"></div></div>
               </div>
@@ -59,7 +59,7 @@ import toast from 'react-hot-toast'
               </div>
               {
                 Data.length!==0 ? (
-                  <div className="col-12 col-sm-7 col-md-5 col-lg-6 col-xl-8 col-xxl-7 searchsuggestion scroll bg-white position-absolute">
+                  <div className="col-11 col-sm-7 col-md-5 col-lg-6 col-xl-8 col-xxl-7 p-0 searchsuggestion scroll bg-white position-absolute">
                   <div className="container-fluid p-0 m-0">
                   {
                     loading ? (      
@@ -70,9 +70,10 @@ import toast from 'react-hot-toast'
                            <div className="col-12">
                            {
                              Data.map((data)=>(
-                               <Link to={`/clauses/${data.clause_name}`} state={{id:data.id}} className='text-decoration-none d-block col-12 my-2 py-md-2 border-1 search_results border-bottom border-blue1'>
+                               <Link to={`/clauses/${data.clause_name}`} state={{id:data.id}} className='text-decoration-none d-block col-12 my-2 py-md-2 border-1 search_results'>
                                <h6 className='text-black fw-normal p-0 m-0 text-truncate'>{data.clause_name}</h6>
                                <p className='text-blue1 fw-light p-0 m-0 text-truncate'>{data.definition}</p>
+                               <hr className='p-0 m-0 mt-1'/>
                                </Link>
                          
                              ))

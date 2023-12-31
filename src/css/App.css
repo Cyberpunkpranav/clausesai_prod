@@ -102,6 +102,9 @@ display: none;
     display:inline;
     letter-spacing: -3px;
   }
+  .searchsuggestion{
+    margin-top: 3.2rem;
+  }
 }
 @media screen and (min-width:992px) {
   .searchsection{
@@ -129,7 +132,7 @@ display: none;
   }
   .searchsuggestion{
     max-height:20rem;
-    margin-top:6rem;
+    margin-top:5.5rem;
     /* width:60%; */
   }
 }
@@ -148,7 +151,7 @@ display: none;
   }
   .searchsuggestion{
     max-height:20rem;
-    margin-top:7rem;
+    margin-top:6rem;
     /* width:65%; */
   }
 }
