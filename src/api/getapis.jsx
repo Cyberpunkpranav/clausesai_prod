@@ -23,10 +23,10 @@ export const GetClauses = async(req)=>{
     return res
     }
     
-export const GetClausesById = async(id)=>{
+export const GetClausesByName = async(clause_name)=>{
     let res;
     try {
-      const response= await axios.get(`/api/user/services/libraries/clauses/view/${id}`)
+      const response= await axios.get(`/api/user/services/libraries/clauses/view?clause_name=${clause_name}`)
       res=response
     } catch (error) {
         toast.error(error.message)

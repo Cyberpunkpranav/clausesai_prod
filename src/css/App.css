@@ -8,7 +8,65 @@
   margin-bottom:2rem;
 }
 .search{
-  width:90%;
+  width:40rem;
+  caret-color: transparent;
+  color: transparent;
+  border-bottom: 2px solid var(--blue1);
+}
+.search:focus .cursor_line{
+display: none;
+}
+.cursor{
+  position:absolute;
+  bottom:20%;
+  left:1%;
+}
+.cursor_line{
+  /* position:absolute;
+  bottom:10%;
+  left:1%; */
+  height:1.5rem;
+  width:2px;
+  background-color: var(--blue1);
+  animation-name: ud;
+  animation-duration:3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ud{
+  0%{
+    scale: 0;
+  }
+  25%{
+    scale: 1;
+  }
+  50%{
+    scale:0;
+  }
+  75%{
+    scale:1;
+  }
+  100%{
+    scale:0;
+  }
+}
+/* input{
+  caret-color: var(--blue1);
+  caret-shape: ;
+
+} */
+
+@keyframes PulseAttention {
+  50% {
+    border-color: red;
+  }
+}
+.search_results{
+  background-color: var(--white);
+}
+.search_results:hover {
+  background-color: var(--blue13);
 }
 /* .searchsection .all_clauses{
   margin-top:3rem;
@@ -21,6 +79,9 @@
 .search::placeholder{
   font-style: italic;
 }
+.caption{
+  margin-top:5rem;
+}
 .caption h1{
   font-size: 2rem;
   line-height: 2rem;
@@ -30,12 +91,11 @@
 }
 .searchsuggestion{
   margin-top:2.5rem;
-  width:90%;
+  /* width:90%; */
 }
 @media screen and (min-width:576px) {
   .caption{
     margin-top: 10vh;
-
   }
   .caption h1{
     font-size: 2rem;
@@ -49,7 +109,7 @@
   }
   .searchsuggestion{
     margin-top: 3.7rem;
-    width:70%;
+    /* width:70%; */
   }
     .search{
       width:70%
@@ -69,8 +129,8 @@
   }
   .searchsuggestion{
     max-height:20rem;
-    margin-top:4rem;
-    width:60%;
+    margin-top:6rem;
+    /* width:60%; */
   }
 }
 
@@ -88,7 +148,14 @@
   }
   .searchsuggestion{
     max-height:20rem;
-    margin-top:4rem;
-    width:65%;
+    margin-top:7rem;
+    /* width:65%; */
+  }
+}
+@media screen and (min-width:2000px) {
+  .caption h1{
+    font-size: 5rem;
+    display:inline;
+    letter-spacing: -4px;
   }
 }

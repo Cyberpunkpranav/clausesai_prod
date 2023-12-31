@@ -1,5 +1,5 @@
 import React,{Suspense, lazy, useEffect} from 'react'
-import { Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 import { Non_user_Access } from './api/getapis';
 import './css/App.css'
@@ -47,12 +47,12 @@ const App =  ()=>{
 <Suspense fallback={<div className="text-charcoal75 fs-6 fw-bold text-center"> {" "} loading..{" "} </div>} >
   <Routes>
   <Route path='/' element={<Search/>}/>
-  <Route path='clauses' element={<Clauses/>}/>
-  <Route path='clauses/:clause' element={<Selected_clause/>}/>
-  <Route path='login' element={<Login/>}/>
-  <Route path='signup' element={<Signup/>}/>
-  <Route path='know_about_us' element={<Know_about_us/>}/>
-  <Route path="*" element={<NotFound/>}/>
+  <Route path='/clauses' element={<Clauses/>}/>
+  <Route path='/clauses/:clause_name' element={<Selected_clause/>}/>
+  <Route path='/login' element={<Login/>}/>
+  <Route path='/signup' element={<Signup/>}/>
+  <Route path='/know_about_us' element={<Know_about_us/>}/>
+  <Route path="/*" element={<NotFound/>}/>
 </Routes>
 </Suspense>
   )

@@ -53,7 +53,9 @@ const Clauses = () => {
   },[req.offset])
   return (
     <div className='container-fluid p-0 clausesection'>
-        <Link to='/' className='text-decoration-none position-absolute back_to_search text-blue1 ps-3'><img src={process.env.PUBLIC_URL+'/images/back.png'} className='img-fluid icons'/></Link>
+        {/* <Link to='/' className='text-decoration-none position-absolute back_to_search text-blue1 ps-3'><img src={process.env.PUBLIC_URL+'/images/back.png'} className='img-fluid icons'/></Link> */}
+        <Link to='/' className='d-flex align-items-center justify-content-end text-blue1 text-decoration-none'><img src={process.env.PUBLIC_URL+'/images/search.png'} className='img-fluid icon-small me-1'/><small className='text-end'>Search</small></Link>
+
      <Helmet>
       <title>clauses | clausesai</title>
       <meta name="description" content="get acccess to 100 and more legal clauses on clausesai" />
@@ -64,13 +66,13 @@ const Clauses = () => {
       <Clauses_Loader/>
     ):(   
           data!==undefined ? (
-            <div className="container-fluid ps-2 p-0 mt-lg-3">
+            <div className="container-fluid clau ps-2 mt-0 p-0">
               {
             data.length!=0 && data.map((data)=>(
-            <div className="clauses ps-2 py-2 my-lg-4 my-1">
-            <Link to={`/clauses/${data.clause_name}`} state={{id:data.id}} className="col-12 text-decoration-none">
-              <h3 className='text-black fw-normal'>{data.clause_name?data.clause_name:''}</h3>
-              <p className='text-gray2 fw-normal'>{data.definition?data.definition:''}</p>
+            <div className="clauses mb-5 ps-2">
+            <Link to={`/clauses/${data.clause_name}`} className="col-12 text-decoration-none">
+              <h1 className='text-black fw-normal'>{data.clause_name?data.clause_name:''}</h1>
+              <p className='text-gray2 definition fw-normal'>{data.definition?data.definition:''}</p>
             </Link>
             </div>
             ))
@@ -88,7 +90,7 @@ const Clauses = () => {
                 ):(
                   
                     loadmore ? (
-                      <div className="row justify-content-center">
+                      <div className="row p-0 m-0 justify-content-center">
                       <div className="col-4"><hr/></div>
                       <button className='btn text-gray1 col-auto' onClick={(e)=>{setreq(prevState=>({...prevState,offset:req.offset+12}))}}>load more</button>
                       <div className="col-4"><hr/></div>
@@ -104,7 +106,7 @@ const Clauses = () => {
             </div>
   
           ):(
-            <div className="container text-center justify-content-center d-flex align-items-center fw-semibold text-gray2" style={{height:'50vh'}}>No Clauses found</div>
+            <div className="container p-0 m-0 text-center justify-content-center d-flex align-items-center fw-semibold text-gray2" style={{height:'50vh'}}>No Clauses found</div>
           )
     
   )

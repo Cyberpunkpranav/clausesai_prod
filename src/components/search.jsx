@@ -48,24 +48,29 @@ import toast from 'react-hot-toast'
             <h1 className='text-gray2 text-center'>APPLY</h1>
             </div>
             <main className="row p-0 m-0 justify-content-center position-relative">
-              <input type="text" className='rounded-pill py-2 px-3 py-lg-3 px-lg-5 bg-white text-gray2 search border border-1 bg-gray4' onChange={(e)=>setsearch(e.target.value)} placeholder='Type here to read your relavant clause....' />
-              <div className="d-flex text-align-center justify-content-center w-75 mt-3 ">
-              <p>Unable to identify the clause ? Click here to check out <Link className=' text-blue1 all_clauses fw-normal ' to='clauses'><p className='d-inline'>all clauses</p></Link></p>
+              <div className="col-12 d-flex justify-content-center">
+              <div className="position-relative text-center col-12 col-sm-7 col-md-5 col-lg-6 col-xl-8 col-xxl-7 p-0 m-0 mt-xxl-5" >
+              <input type="text" autoFocus={true} className='border-blue1 bg-white ps-2 py-2 search bg-gray4 w-100 ' onChange={(e)=>setsearch(e.target.value)} placeholder='Type here to read your relavant clause....' />
+              <div className='cursor d-flex'>{search}<div className="cursor_line"></div></div>
+              </div>
+              </div>
+              <div className="col-12 text-center mt-4">
+              <small>Unable to identify the clause ? Click here to check out <Link className=' text-blue1 all_clauses fw-normal ' to='/clauses'><small className='d-inline'>all clauses</small></Link></small>
               </div>
               {
                 Data.length!==0 ? (
-                  <div className="searchsuggestion scroll bg-white position-absolute">
+                  <div className="col-12 col-sm-7 col-md-5 col-lg-6 col-xl-8 col-xxl-7 searchsuggestion scroll bg-white position-absolute">
                   <div className="container-fluid p-0 m-0">
                   {
                     loading ? (      
-                    <div className="container py-2 py-md-3 py-lg-4 d-flex align-items-center">
-                    <p role="status">Loading...</p>
-                    <div className="spinner-border ms-auto" aria-hidden="true"></div>
+                    <div className="container py-2 py-md-3 py-lg-4 border-bottom d-flex align-items-center">
+                     <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                      loading...
                   </div>):(
                            <div className="col-12">
                            {
                              Data.map((data)=>(
-                               <Link to={`/clauses/${data.clause_name}`} state={{id:data.id}} className='text-decoration-none d-block col-12 my-2 py-md-2 px-2 px-md-3 px-lg-4 border-1 search_results border-bottom border-blue1'>
+                               <Link to={`/clauses/${data.clause_name}`} state={{id:data.id}} className='text-decoration-none d-block col-12 my-2 py-md-2 border-1 search_results border-bottom border-blue1'>
                                <h6 className='text-black fw-normal p-0 m-0 text-truncate'>{data.clause_name}</h6>
                                <p className='text-blue1 fw-light p-0 m-0 text-truncate'>{data.definition}</p>
                                </Link>

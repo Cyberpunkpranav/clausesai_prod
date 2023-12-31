@@ -2,7 +2,14 @@
     width:3rem;
   }
   .navbar{
-    width:90%
+    width:90%;
+    margin-bottom:1rem
+  }
+   .offcanvas{
+    background: url('../../public/images/offcanvas_bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .icons{
     width:1rem;

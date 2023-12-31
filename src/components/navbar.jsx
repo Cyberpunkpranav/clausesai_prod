@@ -5,7 +5,6 @@ import toast from 'react-hot-toast'
 import Cookies from 'js-cookie';
 import axios from '../api/axios';
 import jwt_decode from 'jwt-decode'
-import {useNavigate} from 'react-router-dom'
 import {userData} from '../security/decryption'
 import { encryptNumber,encryptString } from '../security/crypto';
 import '../css/navbar.css'
@@ -73,11 +72,11 @@ const Navbar = () => {
         {
           userData.username !=undefined  ? (
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className='nav-item mt-3' data-bs-dismiss="offcanvas" aria-label="Close"><h4 className='fw-normal'>{userData.username}</h4></li>
+              <li className='nav-item mt-3' data-bs-dismiss="offcanvas" aria-label="Close"><img className='img-fluid icons me-2 align-text-center' src={process.env.PUBLIC_URL+'/images/profile.png'}/>{userData.username}</li>
               <li className='nav-item mt-3' data-bs-dismiss="offcanvas" aria-label="Close">
-              <Link to='know_about_us' className='d-block text-black text-decoration-none'><img src={process.env.PUBLIC_URL+'/images/info.png'} className='img-fluid icons me-2'/>Know About Us</Link>
+              <Link to='know_about_us' className='d-block text-black text-decoration-none'><img src={process.env.PUBLIC_URL+'/images/info_blue1.png'} className='img-fluid icons me-2'/>Know About Us</Link>
               </li>
-              <li className='nav-item text-redlight mt-3 cursor-pointer' data-bs-dismiss="offcanvas" aria-label="Close" onClick={()=>logout()}><img src={process.env.PUBLIC_URL+'/images/logout.png'} className='img-fluid icons me-2'/>Logout</li>
+              <li className='nav-item text-redlight mt-3 cursor-pointer' data-bs-dismiss="offcanvas" aria-label="Close" onClick={()=>logout()}><img src={process.env.PUBLIC_URL+'/images/logout_redlight.png'} className='img-fluid icons me-2'/>Logout</li>
             </ul>
           
           ):(
@@ -106,8 +105,8 @@ const Navbar = () => {
         }
         </div>
         <div className="terms_andConditions">
-        <Link className='text-gray1 text-decoration-none d-block py-2'><small>Privacy Policy</small></Link>
-        <Link className='text-gray1 text-decoration-none d-block py-2'><small>Terms and Conditions</small></Link>
+        <Link className='text-gray1 text-decoration-none text-white d-block text-end py-1'><small>Privacy Policy</small></Link>
+        <Link className='text-gray1 text-decoration-none text-white d-block text-end py-1'><small>Terms and Conditions</small></Link>
         
         </div>
       
